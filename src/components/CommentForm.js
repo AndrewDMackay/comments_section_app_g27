@@ -14,10 +14,19 @@ const CommentForm = () => {
         setText(event.target.value)
     }
 
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        // Any form validation..
+
+        // Update the list of comments with the new comment..
+
+        // Reset the form's input fields..
+    }
+
     return(
         <div className="comment-form">
             <h3>Add a comment:</h3>
-            <form>
+            <form onSubmit={handleFormSubmit}>
                 <input type="text" placeholder="Your name.." value={author} onChange={handleAuthorChange}/>
                 <input type="text" placeholder="Say something.." value={text} onChange={handleTextChange}/>
                 <input type="submit" value="Add"/>
