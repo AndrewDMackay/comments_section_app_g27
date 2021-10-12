@@ -1,5 +1,8 @@
+
 import React, {useState} from "react";
+
 import CommentList from "../components/CommentList";
+import CommentForm from "../components/CommentForm";
 
 const CommentBox = () => {
 
@@ -21,9 +24,11 @@ const CommentBox = () => {
   return (
     <div className="comment-box">
         <CommentList comments={comments} />
+        <CommentForm />
     </div>
   );
 
 }
 
 export default CommentBox;
+
