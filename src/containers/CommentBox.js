@@ -21,10 +21,19 @@ const CommentBox = () => {
         ]
       )
 
+      const addComment = (submittedComment) => {
+        submittedComment.id = Date.now()
+        const copyComments = [...comments, submittedComment]
+        setComments(copyComments)
+      }
+
+      // [...comments], makes a 'deep copy' of the comments sections, utilising 'spread', see above..
+
+
   return (
     <div className="comment-box">
         <CommentList comments={comments} />
-        <CommentForm />
+        <CommentForm onCommentSubmit={(comment) => {addComment(comment)}}/>
     </div>
   );
 

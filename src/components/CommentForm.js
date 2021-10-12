@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
 
-const CommentForm = () => {
+const CommentForm = ({onCommentSubmit}) => {
 
     const [author, setAuthor] = useState("")
     const [text, setText] = useState("")
@@ -17,10 +17,19 @@ const CommentForm = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         // Any form validation..
-
+        const authorToSubmit = author.trim()
+        const textToSubmit = text.trim()
+        if(!authorToSubmit || !textToSubmit){
+            return
+        }
         // Update the list of comments with the new comment..
-
+        onCommentSubmit({
+            author: authorToSubmit,
+            text: textToSubmit
+        })
         // Reset the form's input fields..
+        setAuthor("")
+        setText("")
     }
 
     return(
