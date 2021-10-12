@@ -1,19 +1,31 @@
+
 .App {
   text-align: center;
 }
+
 
 .comment-box{
   border: 5px solid red;
   padding: 10px;
 }
 
+
 .comment-list{
   border: 5px solid blue;
   padding: 10px;
 }
+
 
 .comment{
   border: 5px solid green;
   padding: 10px;
   margin-bottom: 10px;
 }
+
+
+.comment-form {
+  border: 5px solid hotpink;
+  padding: 20px;
+  margin-top: 20px;
+}
+
